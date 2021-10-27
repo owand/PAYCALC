@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LanguageEng" xml:space="preserve">
+    <value>English</value>
+    <comment>Английский язык приложения</comment>
+  </data>
+  <data name="LanguageRus" xml:space="preserve">
+    <value>Russian</value>
+    <comment>Русский язык приложения</comment>
+  </data>
+  <data name="LanguageUkr" xml:space="preserve">
+    <value>Ukraine</value>
+    <comment>Украинский язык приложения</comment>
+  </data>
+  <data name="ThemesDarkName" xml:space="preserve">
+    <value>Dark</value>
+    <comment>Темная тема приложения</comment>
+  </data>
+  <data name="ThemesLightName" xml:space="preserve">
+    <value>Light</value>
+    <comment>Светлая тема приложения</comment>
+  </data>
+  <data name="LanguagesApp" xml:space="preserve">
+    <value>Application language</value>
+    <comment>Язык приложения</comment>
+  </data>
+  <data name="ThemesApp" xml:space="preserve">
+    <value>Select the application theme</value>
+    <comment>Тема приложения</comment>
+  </data>
+  <data name="SettingsApp" xml:space="preserve">
+    <value>Settings</value>
+    <comment>Заголовок для параметров</comment>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>The calculator of salary in Ukraine</value>
+    <comment>Краткое описание</comment>
+  </data>
+  <data name="labVersion" xml:space="preserve">
+    <value>Version</value>
+    <comment>Заголовок для версии</comment>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>This application does not collect or store any user information.</value>
+    <comment>Заявление о конфиденциальности</comment>
+  </data>
+  <data name="PrivacyApp" xml:space="preserve">
+    <value>Privacy</value>
+    <comment>Заголовок для конфиденциальности</comment>
+  </data>
+  <data name="RateApp" xml:space="preserve">
+    <value>Rate the app</value>
+  </data>
+  <data name="OSAbout" xml:space="preserve">
+    <value>Application on other platforms</value>
+    <comment>Заголовок о других платформах</comment>
+  </data>
+  <data name="OSAndroid" xml:space="preserve">
+    <value>Salary Calculator Ukraine in Google Play</value>
+    <comment>Ссылка на Google Play</comment>
+  </data>
+  <data name="OSMicrosoft" xml:space="preserve">
+    <value>Salary Calculator Ukraine in Microsoft Store</value>
+    <comment>Ссылка на Microsoft Store</comment>
+  </data>
+  <data name="AuthorApp" xml:space="preserve">
+    <value>Developer</value>
+    <comment>Заголовок для Разработчик</comment>
+  </data>
+  <data name="AuthorName" xml:space="preserve">
+    <value>Andrey Ovcharenko</value>
+    <comment>Имя разработчика</comment>
+  </data>
+  <data name="WrongLabel" xml:space="preserve">
+    <value>Something's wrong? Let me know </value>
+    <comment>Заголовок для сообщения об ошибке в приложении</comment>
+  </data>
+  <data name="WrongLabelMail" xml:space="preserve">
+    <value>In here</value>
+    <comment>Заголовок для электронной почты в сообщения об ошибке в приложении</comment>
+  </data>
+  <data name="messageOk" xml:space="preserve">
+    <value>Ok</value>
+    <comment>Подпись кнопки подтверждения в сообщении</comment>
+  </data>
+  <data name="messageError" xml:space="preserve">
+    <value>Error!</value>
+    <comment>Сообщение об ошибке</comment>
+  </data>
+  <data name="TitleSalaryPage" xml:space="preserve">
+    <value>Salary Calculator Ukraine</value>
+    <comment>Заголовок страницы</comment>
+  </data>
+  <data name="TitleDevelopment" xml:space="preserve">
+    <value>In development!</value>
+    <comment>Заголовок В разработке</comment>
+  </data>
+  <data name="messageTitleExit" xml:space="preserve">
+    <value>Exit App?</value>
+    <comment>Заголовок для сообщения о выходе из приложения</comment>
+  </data>
+  <data name="messageExit" xml:space="preserve">
+    <value>Are you sure you want to exit this App?</value>
+    <comment>Сообщение о выходе из приложения</comment>
+  </data>
+  <data name="messageСancel" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Подпись кнопки отмены в сообщении</comment>
+  </data>
+  <data name="labAbout" xml:space="preserve">
+    <value>About the application</value>
+    <comment>Заголовок для информации о приложении</comment>
+  </data>
+  <data name="AboutApp" xml:space="preserve">
+    <value>Using the application, you can calculate the amount of salary, the amount of wages "on hand", the amount of expenses of the enterprise on payment of wages.</value>
+    <comment>Описание приложения</comment>
+  </data>
+  <data name="labNET" xml:space="preserve">
+    <value>The amount of salary net, UAH</value>
+  </data>
+  <data name="labGROSS" xml:space="preserve">
+    <value>The amount of salary gross, UAH</value>
+  </data>
+  <data name="labCOMPANY" xml:space="preserve">
+    <value>Salary with charges (enterprise costs), UAH</value>
+  </data>
+  <data name="labSALARY" xml:space="preserve">
+    <value>Amount to calculate, UAH</value>
+  </data>
+  <data name="entrSALARY" xml:space="preserve">
+    <value>Enter Amount</value>
+  </data>
+  <data name="labTypeNET" xml:space="preserve">
+    <value>net</value>
+  </data>
+  <data name="labTypeGROSS" xml:space="preserve">
+    <value>gross</value>
+  </data>
+  <data name="labTypeCOMPANY" xml:space="preserve">
+    <value>expenses of the company</value>
+  </data>
+  <data name="IncomeTAX" xml:space="preserve">
+    <value>Tax on income of individuals, UAH</value>
+  </data>
+  <data name="MilitaryTAX" xml:space="preserve">
+    <value>Other (military fee), UAH</value>
+  </data>
+  <data name="SSC" xml:space="preserve">
+    <value>Single social contribution, UAH</value>
+  </data>
+  <data name="labOptions" xml:space="preserve">
+    <value>Rates to calculate</value>
+  </data>
+  <data name="labRateIncomeTAX" xml:space="preserve">
+    <value>Personal income tax (PIT),%</value>
+  </data>
+  <data name="labRateMilitaryTAX" xml:space="preserve">
+    <value>The rate of military duty,%</value>
+  </data>
+  <data name="labRateSSC" xml:space="preserve">
+    <value>The rate of the unified social contribution (USC), UAH.</value>
+  </data>
+  <data name="labMinSALARY" xml:space="preserve">
+    <value>Minimum wage, UAH</value>
+  </data>
+  <data name="labMinSSC" xml:space="preserve">
+    <value>Minimum USC, UAH</value>
+  </data>
+  <data name="labMaxSSC" xml:space="preserve">
+    <value>Maximum USC, UAH</value>
+  </data>
+  <data name="labTotalTax" xml:space="preserve">
+    <value>Total taxes and fees, UAH.</value>
+  </data>
+  <data name="ThemesOSName" xml:space="preserve">
+    <value>Default</value>
+    <comment>Тема приложения по умолчанию</comment>
+  </data>
+</root>

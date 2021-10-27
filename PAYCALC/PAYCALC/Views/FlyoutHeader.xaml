@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:resources="clr-namespace:PAYCALC.Resources"
+             xmlns:services="clr-namespace:PAYCALC.Services"
+             x:Class="PAYCALC.Views.FlyoutHeader">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="Style" Value="{DynamicResource labelStyle}" />
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="Style" Value="{DynamicResource pickerStyle}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <Grid ColumnSpacing="0" RowSpacing="0" BackgroundColor="#2D353E" RowDefinitions="auto, auto, *" >
+
+        <Grid Grid.Row="0" ColumnSpacing="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76" />
+                <RowDefinition Height="{x:OnPlatform UWP='20', Android='28', iOS='24'}" />
+            </Grid.RowDefinitions>
+
+            <!--Logo-->
+            <StackLayout Grid.Row="0" Padding="12,0,12,0" Spacing="0" >
+                <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="EndAndExpand" Margin="0,0,0,8">
+                    <Image x:Name="logoImage" Source="{services:PlatformImage SourceImage='logo_image_app'}" VerticalOptions="Center" WidthRequest="32" HeightRequest="32" Margin="0,0,8,0" />
+                    <Label x:Name="labAppName" Text="Salary Ukraine" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontAttributes="Bold" TextColor="#008040" FontSize="28"
+                       VerticalTextAlignment="Start" VerticalOptions="StartAndExpand" Margin="0,0,0,0" />
+                </StackLayout>
+                <Label x:Name="labAboutApp" Text="{x:Static resources:AppResource.TitleSalaryPage}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"
+                       TextColor="#008040" FontSize="14" VerticalOptions="End" Margin="4,0,0,0" />
+            </StackLayout>
+
+            <!--Version-->
+            <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="16,0,12,0" Spacing="0">
+                <Label x:Name="xlabVersion" Text="{x:Static resources:AppResource.labVersion}" TextColor="#008040" FontSize="12"
+                       HorizontalTextAlignment="Start" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Label x:Name="labAppVersion" Margin="4,0,12,0" TextColor="#008040" FontSize="10" HorizontalOptions="Start" VerticalOptions="Center" />
+            </StackLayout>
+        </Grid>
+
+        <Grid Grid.Row="2" ColumnSpacing="0" RowSpacing="0" RowDefinitions="auto, auto, auto, auto, auto, *, *" >
+
+            <!--Languages-->
+            <StackLayout Grid.Row="0" Margin="12,12,8,8" Spacing="0">
+                <Label Text="{x:Static resources:AppResource.LanguagesApp}" FontAttributes="Bold" Margin="0,8,0,0" TextColor="White" />
+                <StackLayout Margin="0,8,0,0" WidthRequest="300" HorizontalOptions="Start">
+                    <Picker x:Name="PickerLanguages" ItemsSource="{Binding LangCollection}" SelectedItem="{Binding LANGNAME, TargetNullValue='en'}"
+                            ItemDisplayBinding="{Binding Path=LANGDISPLAY}" Margin="0,0,4,0" TextColor="White" />
+                </StackLayout>
+            </StackLayout>
+
+            <!--Themes-->
+            <StackLayout Grid.Row="1" Margin="12,12,8,8" Spacing="0">
+                <Label Text="{x:Static resources:AppResource.ThemesApp}" FontAttributes="Bold" Margin="0,8,0,0" TextColor="White" />
+                <StackLayout Margin="0,8,0,0" WidthRequest="300" HorizontalOptions="Start">
+                    <Picker x:Name="PickerThemes" ItemsSource="{Binding ThemesCollection}" SelectedItem="{Binding THEMENAME, TargetNullValue='myOSTheme'}"
+                            ItemDisplayBinding="{Binding THEMEDISPLAY}" Margin="0,0,4,0" TextColor="White" />
+                </StackLayout>
+            </StackLayout>
+
+            <!--About-->
+            <Grid Grid.Row="2" Margin="12,12,8,8" ColumnSpacing="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="{x:Static resources:AppResource.labAbout}" FontAttributes="Bold" TextColor="White" />
+                <Label Grid.Row="1" Text="{x:Static resources:AppResource.AboutApp}" TextColor="White" MaxLines="10" />
+                <Label Grid.Row="2" TextColor="Green" FontAttributes="Bold" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static resources:AppResource.RateApp}" TextDecorations="Underline" >
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OpenReviewStore" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" "/>
+                            <Span Text="&#xF0339;" FontFamily="{x:StaticResource MaterialIconFont}" FontSize="12" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+
+            <!-- OS About -->
+            <StackLayout Grid.Row="3" Margin="12,12,8,8" Spacing="0">
+                <Label Text="{x:Static resources:AppResource.OSAbout}" FontAttributes="Bold" TextColor="White" />
+                <Label TextColor="DarkOrange" FontAttributes="Bold" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextDecorations="Underline" >
+                                <Span.Text>
+                                    <OnPlatform x:TypeArguments="x:String" >
+                                        <On Platform="Android" Value="{x:Static resources:AppResource.OSMicrosoft}" />
+                                        <On Platform="UWP" Value="{x:Static resources:AppResource.OSAndroid}" />
+                                    </OnPlatform>
+                                </Span.Text>
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OpenStore" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" "/>
+                            <Span Text="&#xF0339;" FontFamily="{x:StaticResource MaterialIconFont}" FontSize="12" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
+            <!--Author-->
+            <StackLayout Grid.Row="4" Margin="12,12,8,8" Spacing="0">
+                <!--<Label Text="{x:Static resources:AppResource.AuthorTitle}" FontAttributes="Bold" Margin="0,8,0,0" />-->
+                <Label Margin="0,8,0,0" FontAttributes="Bold" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static resources:AppResource.AuthorApp}" TextColor="White"/>
+                            <Span Text="  "/>
+                            <Span Text="{x:Static resources:AppResource.AuthorName}" TextColor="DarkOrange" TextDecorations="Underline" >
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Tapped_mailAuthor" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" "/>
+                            <Span Text="&#xF0339;" FontFamily="{x:StaticResource MaterialIconFont}" TextColor="DarkOrange" FontSize="12" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="Copyright©2018" Margin="0,0,4,0" HorizontalOptions="Start" TextColor="White" />
+                <Label Margin="0,8,0,0" FontAttributes="Bold" HorizontalOptions="Start">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{x:Static resources:AppResource.WrongLabel}" TextColor="White"/>
+                            <Span Text=" "/>
+                            <Span Text="{x:Static resources:AppResource.WrongLabelMail}" TextColor="DarkOrange" TextDecorations="Underline" >
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Tapped_mailAuthor" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" "/>
+                            <Span Text="&#xF0339;" FontFamily="{x:StaticResource MaterialIconFont}" TextColor="DarkOrange" FontSize="12" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
+            <!--Policy-->
+            <StackLayout Grid.Row="5" Margin="12,12,8,8" Spacing="0">
+                <Label Text="{x:Static resources:AppResource.PrivacyApp}" FontAttributes="Bold" TextColor="White" />
+                <Label Text="{x:Static resources:AppResource.Privacy}" TextColor="White" VerticalOptions="StartAndExpand" />
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentView>

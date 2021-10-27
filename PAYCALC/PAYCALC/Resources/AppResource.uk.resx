@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LanguageEng" xml:space="preserve">
+    <value>Англійська</value>
+  </data>
+  <data name="LanguageRus" xml:space="preserve">
+    <value>Російська</value>
+  </data>
+  <data name="LanguageUkr" xml:space="preserve">
+    <value>Українська</value>
+  </data>
+  <data name="ThemesDarkName" xml:space="preserve">
+    <value>Темна</value>
+  </data>
+  <data name="ThemesLightName" xml:space="preserve">
+    <value>Світла</value>
+  </data>
+  <data name="LanguagesApp" xml:space="preserve">
+    <value>Мова програми</value>
+  </data>
+  <data name="ThemesApp" xml:space="preserve">
+    <value>Тема програми</value>
+  </data>
+  <data name="SettingsApp" xml:space="preserve">
+    <value>Параметри</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Калькулятор заробітної плати в Україні</value>
+  </data>
+  <data name="labVersion" xml:space="preserve">
+    <value>Версія</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>Ця програма не збирає та не зберігає дані користувача.</value>
+  </data>
+  <data name="PrivacyApp" xml:space="preserve">
+    <value>Конфіденційності</value>
+  </data>
+  <data name="RateApp" xml:space="preserve">
+    <value>Оцінювання програми</value>
+  </data>
+  <data name="OSAbout" xml:space="preserve">
+    <value>Програма на інших платформах</value>
+  </data>
+  <data name="OSAndroid" xml:space="preserve">
+    <value>Калькулятор заробітної плати в Google Play</value>
+  </data>
+  <data name="OSMicrosoft" xml:space="preserve">
+    <value>Калькулятор заробітної плати в магазині Microsoft</value>
+  </data>
+  <data name="AuthorApp" xml:space="preserve">
+    <value>Розробник</value>
+  </data>
+  <data name="AuthorName" xml:space="preserve">
+    <value>Андрій Овчаренко</value>
+  </data>
+  <data name="WrongLabel" xml:space="preserve">
+    <value>Щось не так? Дайте мені знати</value>
+  </data>
+  <data name="WrongLabelMail" xml:space="preserve">
+    <value>тут</value>
+  </data>
+  <data name="messageOk" xml:space="preserve">
+    <value>Так</value>
+  </data>
+  <data name="messageError" xml:space="preserve">
+    <value>Помилка!</value>
+  </data>
+  <data name="TitleSalaryPage" xml:space="preserve">
+    <value>Розрахунок розміру зарплати в Україні</value>
+  </data>
+  <data name="TitleDevelopment" xml:space="preserve">
+    <value>В розробці!</value>
+  </data>
+  <data name="messageTitleExit" xml:space="preserve">
+    <value>Завершити роботу програми?</value>
+  </data>
+  <data name="messageExit" xml:space="preserve">
+    <value>Ви дійсно бажаєте завершити роботу програми?</value>
+  </data>
+  <data name="messageСancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="labAbout" xml:space="preserve">
+    <value>Інформація про програму</value>
+  </data>
+  <data name="AboutApp" xml:space="preserve">
+    <value>Користуючись додатком, ви можете розрахувати суму заробітної плати, суму заробітної плати "чистої", суму витрат підприємства на оплату заробітної плати.</value>
+  </data>
+  <data name="labNET" xml:space="preserve">
+    <value>Зарплата "чиста", грн.</value>
+  </data>
+  <data name="labGROSS" xml:space="preserve">
+    <value>Оклад з відрахуваннями - "грязна", грн.</value>
+  </data>
+  <data name="labSALARY" xml:space="preserve">
+    <value>Сума для розрахунку, грн.</value>
+  </data>
+  <data name="labCOMPANY" xml:space="preserve">
+    <value>Оклад з нарахуваннями (для підприємства), грн.</value>
+  </data>
+  <data name="entrSALARY" xml:space="preserve">
+    <value>Введіть суму</value>
+  </data>
+  <data name="labTypeNET" xml:space="preserve">
+    <value>"чиста"</value>
+  </data>
+  <data name="labTypeGROSS" xml:space="preserve">
+    <value>"грязна"</value>
+  </data>
+  <data name="labTypeCOMPANY" xml:space="preserve">
+    <value>для компанії</value>
+  </data>
+  <data name="IncomeTAX" xml:space="preserve">
+    <value>Податок на доходи фізичних осіб (ПДФО), грн.</value>
+  </data>
+  <data name="MilitaryTAX" xml:space="preserve">
+    <value>Інше (військовий збір), грн.</value>
+  </data>
+  <data name="SSC" xml:space="preserve">
+    <value>Єдиний соціальний внесок (ЄСВ), грн.</value>
+  </data>
+  <data name="labOptions" xml:space="preserve">
+    <value>Ставки для розрахунку</value>
+  </data>
+  <data name="labRateIncomeTAX" xml:space="preserve">
+    <value>Ставка податку з доходів фізичних осіб (ПДФО),%</value>
+  </data>
+  <data name="labRateMilitaryTAX" xml:space="preserve">
+    <value>Ставка військового збору,%</value>
+  </data>
+  <data name="labMinSALARY" xml:space="preserve">
+    <value>Мінімальна зарплата, грн.</value>
+  </data>
+  <data name="labMinSSC" xml:space="preserve">
+    <value>Мінімальний ЄСВ, грн.</value>
+  </data>
+  <data name="labRateSSC" xml:space="preserve">
+    <value>Ставка єдиного соціального внеску (ЄСВ), грн.</value>
+  </data>
+  <data name="labMaxSSC" xml:space="preserve">
+    <value>Максимальний ЄСВ, грн.</value>
+  </data>
+  <data name="labTotalTax" xml:space="preserve">
+    <value>Всього податків та зборів, грн.</value>
+  </data>
+  <data name="ThemesOSName" xml:space="preserve">
+    <value>Системна</value>
+  </data>
+</root>

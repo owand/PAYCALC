@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:resources="clr-namespace:PAYCALC.Resources"
+             xmlns:services="clr-namespace:PAYCALC.Services"
+             x:Class="PAYCALC.Views.SalaryPage"
+             Title="{x:Static resources:AppResource.TitleSalaryPage}"
+             x:Name="salaryPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="tbSettings" Priority="0" Order="Primary" Clicked="OnVisibleOptions" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{x:StaticResource MaterialIconFont}" Glyph="&#xF08BB;" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="Style" Value="{DynamicResource labelStyle}" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="Style" Value="{DynamicResource entryStyle}" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Style" Value="{DynamicResource buttonStyle}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+        <StackLayout Spacing="0" BackgroundColor="{AppThemeBinding Dark={StaticResource Background_Dark}, Light={StaticResource Background_Light}}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" >
+
+            <Grid x:Name="RootGrid" ColumnSpacing="0" RowSpacing="0" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{x:OnIdiom Tablet='496', Desktop='496', Phone='*'}" />
+                    <ColumnDefinition Width="{x:OnIdiom Tablet='120', Desktop='120', Phone='0'}" />
+                    <ColumnDefinition Width="{x:OnIdiom Tablet='496', Desktop='496', Phone='0'}" />
+                    <ColumnDefinition Width="{x:OnIdiom Tablet='*', Desktop='*', Phone='0'}" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48" />
+                    <RowDefinition Height="{x:OnIdiom Tablet='auto', Desktop='auto', Phone='*'}" />
+                    <RowDefinition Height="{x:OnIdiom Tablet='48', Desktop='48', Phone='0'}" />
+                    <RowDefinition Height="{x:OnIdiom Tablet='*', Desktop='*', Phone='0'}" />
+                </Grid.RowDefinitions>
+
+                <!-- SpacebarTop -->
+                <StackLayout Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" x:Name="SpacebarTop" BackgroundColor="#515C6B" Margin="0,0,0,0"
+                             IsVisible="{x:OnIdiom Tablet='true', Desktop='true', Phone='false'}" />
+
+                <!--Header Results-->
+                <Grid Grid.Row="0" Grid.Column="0" x:Name="HeaderResults" ColumnSpacing="0" RowSpacing="0" BackgroundColor="#515C6B" ColumnDefinitions="1.5*, 1*" >
+                    <!-- Salary -->
+                    <Label x:Name="labEntrSALARY" Grid.Row="0" Grid.Column="0" Text="{x:Static resources:AppResource.labSALARY}" Margin="8,0,8,0" TextColor="White"
+                           FontSize="{OnPlatform Android='16', iOS='16', UWP='17'}" />
+                    <Entry Grid.Row="0" Grid.Column="1" x:Name="entrSALARY"
+                           TextChanged="OnTextChanged" BackgroundColor="#515C6B" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" Keyboard="Numeric"
+                           TextColor="White" PlaceholderColor="White" Margin="{OnPlatform Android='0,4,4,0', iOS='0,4,0,0', UWP='0,4,0,0'}" FontSize="18" >
+                        <Entry.Behaviors>
+                            <services:NumericEntryBehavior />
+                        </Entry.Behaviors>
+                    </Entry>
+                </Grid>
+
+                <!-- Results -->
+                <ScrollView Grid.Row="1" Grid.Column="0" x:Name="ScrollResult" VerticalOptions="FillAndExpand" >
+                    <Grid x:Name="Result" ColumnSpacing="0" RowSpacing="0" Margin="0,0,0,20" ColumnDefinitions="40, 1.8*, 1*" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="48" />
+                            <RowDefinition Height="48" />
+                            <RowDefinition Height="48" />
+                            <RowDefinition Height="{x:OnIdiom Tablet='68', Desktop='68', Phone='58'}" />
+                            <RowDefinition Height="{x:OnIdiom Tablet='48', Desktop='48', Phone='38'}" />
+                            <RowDefinition Height="{x:OnIdiom Tablet='48', Desktop='48', Phone='38'}" />
+                            <RowDefinition Height="{x:OnIdiom Tablet='48', Desktop='48', Phone='38'}" />
+                        </Grid.RowDefinitions>
+
+                        <!--NET-->
+                        <CheckBox Grid.Row="0" Grid.Column="0" x:Name="typeNET" Margin="8,4,4,0" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Color="SeaGreen"
+                                  IsChecked="true" CheckedChanged="switchNET" IsEnabled="False" />
+                        <Label Grid.Row="0" Grid.Column="1" x:Name="labNET" Text="{x:Static resources:AppResource.labNET}" Margin="6,4,6,0"
+                               TextColor="SeaGreen" FontSize="{OnPlatform Android='15', iOS='15', UWP='16'}" />
+                        <ContentView Grid.Row="0" Grid.Column="2" Margin="0,4,0,0" Padding="0,0,8,0" BackgroundColor="SeaGreen">
+                            <Label x:Name="NET" TextColor="White" HorizontalTextAlignment="End" FontSize="{OnPlatform Android='15', iOS='15', UWP='16'}" />
+                        </ContentView>
+
+                        <!--GROSS-->
+                        <CheckBox Grid.Row="1" Grid.Column="0" x:Name="typeGROSS" Margin="8,4,4,0" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Color="Sienna"
+                                  IsChecked="false" CheckedChanged="switchGROSS" />
+                        <Label Grid.Row="1" Grid.Column="1" x:Name="labGROSS" Text="{x:Static resources:AppResource.labGROSS}" Margin="6,4,6,0"
+                               TextColor="Sienna" FontSize="{OnPlatform Android='15', iOS='15', UWP='16'}" />
+                        <ContentView Grid.Row="1" Grid.Column="2" Margin="0,4,0,0" Padding="0,0,8,0" BackgroundColor="Sienna">
+                            <Label x:Name="GROSS" TextColor="White" HorizontalTextAlignment="End" FontSize="{OnPlatform Android='15', iOS='15', UWP='16'}" />
+                        </ContentView>
+
+                        <!--COMPANY-->
+                        <CheckBox Grid.Row="2" Grid.Column="0" x:Name="typeCOMPANY" Margin="8,4,4,0" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Color="SteelBlue"
+                                  IsChecked="false" CheckedChanged="switchCOMPANY" />
+                        <Label Grid.Row="2" Grid.Column="1" x:Name="labCOMPANY" Text="{x:Static resources:AppResource.labCOMPANY}" Margin="6,4,6,0"
+                               TextColor="SteelBlue" FontSize="{OnPlatform Android='15', iOS='15', UWP='16'}" />
+                        <ContentView Grid.Row="2" Grid.Column="2" Margin="0,4,0,0" Padding="0,0,8,0" BackgroundColor="SteelBlue">
+                            <Label x:Name="COMPANY" TextColor="White" HorizontalTextAlignment="End" FontSize="{OnPlatform Android='15', iOS='15', UWP='16'}" />
+                        </ContentView>
+
+                        <!-- Income TAX -->
+                        <Label x:Name="labIncomeTAX" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static resources:AppResource.IncomeTAX}" Margin="12,20,8,0"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+                        <Label x:Name="IncomeTAX" Grid.Row="3" Grid.Column="2" Margin="0,28,8,8" HorizontalTextAlignment="End" 
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+
+                        <!-- Military TAX -->
+                        <Label x:Name="labMilitaryTAX" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static resources:AppResource.MilitaryTAX}" Margin="12,0,8,0"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+                        <Label x:Name="MilitaryTAX" Grid.Row="4" Grid.Column="2" Margin="0,8,8,8" HorizontalTextAlignment="End"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+
+
+                        <!-- SSC -->
+                        <Label x:Name="labSSC" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static resources:AppResource.SSC}" Margin="12,0,8,0"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+                        <Label x:Name="SSC" Grid.Row="5" Grid.Column="2" Margin="0,8,8,8" HorizontalTextAlignment="End"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+
+                        <!-- Total Tax -->
+                        <Label x:Name="labTotalTax" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="{x:Static resources:AppResource.labTotalTax}" Margin="12,0,8,0"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+                        <Label x:Name="TotalTax" Grid.Row="6" Grid.Column="2" Margin="0,8,8,8" HorizontalTextAlignment="End"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+                    </Grid>
+                </ScrollView>
+
+                <!-- SpacebarBottom -->
+                <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" x:Name="SpacebarBottom" BackgroundColor="#515C6B" Margin="0,0,0,0"
+                         IsVisible="{x:OnIdiom Tablet='true', Desktop='true', Phone='false'}" />
+
+                <!--Header Parameters-->
+                <Grid Grid.Row="2" Grid.Column="0" x:Name="HeaderParameters" ColumnSpacing="0" RowSpacing="0" BackgroundColor="#515C6B"
+                      IsVisible="{x:OnIdiom Tablet='true', Desktop='true', Phone='false'}" ColumnDefinitions="*, 120" >
+                    <!-- BackButton -->
+                    <StackLayout Grid.Column="0" x:Name="slBackButton" Orientation="Horizontal" HorizontalOptions="StartAndExpand" Spacing="0">
+                        <Button x:Name="BackButton" Text="&#xF004D;" Released="OnVisibleOptions" IsVisible="false" />
+                        <Label x:Name="labOptions" Text="{x:Static resources:AppResource.labOptions}" Margin="12,0,8,0" TextColor="White"
+                               FontSize="{x:OnPlatform Android='15', iOS='15', UWP='16'}" />
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="End" Spacing="0">
+                        <Button x:Name="SaveButton" Text="&#xF0193;" Released="OnSave" IsEnabled="false" />
+                        <Button x:Name="CloseButton" Text="&#xF073A;" Released="OnCancel" />
+                    </StackLayout>
+                </Grid>
+
+                <!-- Parameters -->
+                <ScrollView Grid.Row="3" Grid.Column="0" x:Name="ScrollParameters" VerticalOptions="FillAndExpand" IsVisible="{x:OnIdiom Tablet='true', Desktop='true', Phone='false'}" >
+                    <Grid ColumnSpacing="0" RowSpacing="0" Margin="0,12,0,0" ColumnDefinitions="2.2*, 1*" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{x:OnIdiom Tablet='48', Desktop='48', Phone='44'}" />
+                            <RowDefinition Height="{x:OnIdiom Tablet='48', Desktop='48', Phone='44'}" />
+                            <RowDefinition Height="{x:OnIdiom Tablet='48', Desktop='48', Phone='44'}" />
+                            <RowDefinition Height="{x:OnIdiom Tablet='48', Desktop='48', Phone='44'}" />
+                            <RowDefinition Height="{x:OnIdiom Tablet='48', Desktop='48', Phone='44'}" />
+                            <RowDefinition Height="{x:OnIdiom Tablet='48', Desktop='48', Phone='44'}" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Rate Income TAX -->
+                        <Label x:Name="labRateIncomeTAX" Grid.Row="0" Grid.Column="0" Text="{x:Static resources:AppResource.labRateIncomeTAX}" Margin="12,0,8,0"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" />
+                        <Entry Grid.Row="0" Grid.Column="1" x:Name="entrRateIncomeTAX" Margin="0,0,0,0" VerticalOptions="CenterAndExpand"
+                               HorizontalTextAlignment="End" TextChanged="OnTextChanged" Keyboard="Numeric"
+                               HeightRequest="{x:OnPlatform Android='40', iOS='40', UWP='32'}" FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" >
+                            <Entry.Behaviors>
+                                <services:NumericEntryBehavior />
+                            </Entry.Behaviors>
+                        </Entry>
+
+                        <!-- Rate Military TAX -->
+                        <Label x:Name="labRateMilitaryTAX" Grid.Row="1" Grid.Column="0" Text="{x:Static resources:AppResource.labRateMilitaryTAX}" Margin="12,0,8,0"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" />
+                        <Entry Grid.Row="1" Grid.Column="1" x:Name="entrRateMilitaryTAX" Margin="0,0,0,0" VerticalOptions="CenterAndExpand"
+                               HorizontalTextAlignment="End" TextChanged="OnTextChanged" Keyboard="Numeric"
+                               HeightRequest="{x:OnPlatform Android='40', iOS='40', UWP='32'}" FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" >
+                            <Entry.Behaviors>
+                                <services:NumericEntryBehavior />
+                            </Entry.Behaviors>
+                        </Entry>
+
+                        <!-- Rate SSC -->
+                        <Label x:Name="labRateSSC" Grid.Row="2" Grid.Column="0" Text="{x:Static resources:AppResource.labRateSSC}" Margin="12,0,8,0"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" />
+                        <Entry Grid.Row="2" Grid.Column="1" x:Name="entrRateSSC" Margin="0,0,0,0" VerticalOptions="CenterAndExpand"
+                               HorizontalTextAlignment="End" TextChanged="OnTextChanged" Keyboard="Numeric"
+                               HeightRequest="{x:OnPlatform Android='40', iOS='40', UWP='32'}" FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" >
+                            <Entry.Behaviors>
+                                <services:NumericEntryBehavior />
+                            </Entry.Behaviors>
+                        </Entry>
+
+                        <!-- Rate Min SALARY -->
+                        <Label x:Name="labMinSALARY" Grid.Row="3" Grid.Column="0" Text="{x:Static resources:AppResource.labMinSALARY}" Margin="12,0,8,0"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" />
+                        <Entry Grid.Row="3" Grid.Column="1" x:Name="entrMinSALARY" Margin="0,0,0,0" VerticalOptions="CenterAndExpand"
+                               HorizontalTextAlignment="End" TextChanged="OnTextChanged" Keyboard="Numeric"
+                               HeightRequest="{x:OnPlatform Android='40', iOS='40', UWP='32'}" FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" >
+                            <Entry.Behaviors>
+                                <services:NumericEntryBehavior />
+                            </Entry.Behaviors>
+                        </Entry>
+
+                        <!-- Min SSC -->
+                        <Label x:Name="labMinSSC" Grid.Row="4" Grid.Column="0" Text="{x:Static resources:AppResource.labMinSSC}" Margin="12,0,8,0"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+                        <Label Grid.Row="4" Grid.Column="1" x:Name="MinSSC" Margin="0,8,4,8" HeightRequest="{x:OnPlatform Android='40', iOS='40', UWP='32'}"
+                               HorizontalTextAlignment="End" FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+
+                        <!-- Max SSC -->
+                        <Label x:Name="labMaxSSC" Grid.Row="5" Grid.Column="0" Text="{x:Static resources:AppResource.labMaxSSC}" Margin="12,0,8,0"
+                               FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+                        <Label Grid.Row="5" Grid.Column="1" x:Name="MaxSSC" Margin="0,8,4,8" HeightRequest="{x:OnPlatform Android='40', iOS='40', UWP='32'}"
+                               HorizontalTextAlignment="End" FontSize="{OnPlatform Android='14', iOS='14', UWP='15'}" TextColor="{DynamicResource textColorGray}" />
+                    </Grid>
+                </ScrollView>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout Padding="12" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+            <ActivityIndicator x:Name="indicator" Color="DarkOrange" HeightRequest="48" WidthRequest="48" BackgroundColor="Transparent" />
+            <!--<Label x:Name="labActivityIndicator" Text="{x:Static resources:AppResource.UploadedDB}" HorizontalOptions="Center" IsVisible="False" TextColor="DarkOrange"/>-->
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

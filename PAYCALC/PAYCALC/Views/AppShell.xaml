@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       xmlns:views="clr-namespace:PAYCALC.Views"
+       FlyoutHeaderBehavior="Fixed"
+       FlyoutBackgroundColor="#2D353E"
+       BackgroundColor="#2D353E"
+       x:Class="PAYCALC.Views.AppShell">
+
+    <Shell.Resources>
+        <Style x:Key="BaseStyle" TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#2D353E" />
+            <Setter Property="Shell.ForegroundColor" Value="White" />
+            <Setter Property="Shell.TitleColor" Value="White" />
+            <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+        </Style>
+        <Style TargetType="Shell" BasedOn="{StaticResource BaseStyle}" />
+        <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <views:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+    <ShellContent x:Name="salaryPage" ContentTemplate="{DataTemplate views:SalaryPage}" />
+
+
+</Shell>
