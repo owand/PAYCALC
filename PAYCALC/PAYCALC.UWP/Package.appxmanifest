@@ -8,10 +8,10 @@
 
   <Identity
     Name="34742AndreyOvcharenko.SalaryCalculatorUkraine"
-    Publisher="CN=OWAND"
+    Publisher="CN=1A88FC79-93F9-4E7D-BA4F-0D4691D1340C"
     Version="21.2.90.0" />
 
-  <mp:PhoneIdentity PhoneProductId="2b202e31-43f7-459c-8a73-0457694d2b36" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="5504a3c9-a9cf-4162-9bd7-e24351e32f03" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Salary Calculator Ukraine</DisplayName>
