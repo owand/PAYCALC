@@ -9,11 +9,13 @@
     <Copyright>Andrey Ovcharenko</Copyright>
     <ProduceAssemblyReference>true</ProduceAssemblyReference>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <Optimize>True</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
