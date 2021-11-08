@@ -5,7 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-//[assembly: ExportFont("materialdesignicons-webfont.ttf", Alias = "MaterialIconFont")]
+[assembly: ExportFont("MaterialDesignIcons.ttf", Alias = "MaterialIcons")]
 namespace PAYCALC
 {
     public partial class App : Application
