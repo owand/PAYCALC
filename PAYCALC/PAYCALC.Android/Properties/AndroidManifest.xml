@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.plowand.paycalc" android:installLocation="auto" android:versionName="21.02" android:versionCode="90">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.plowand.paycalc" android:installLocation="auto" android:versionName="21.11" android:versionCode="91">
 	<uses-sdk android:minSdkVersion="22" android:targetSdkVersion="31" />
 	<uses-permission android:name="com.android.vending.BILLING" />
 	<uses-permission android:name="android.permission.INTERNET" />
