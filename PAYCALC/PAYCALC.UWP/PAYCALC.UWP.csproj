@@ -172,7 +172,6 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <None Include="PAYCALC.UWP_TemporaryKey.pfx" />
     <None Include="PAYCALCKey.pfx" />
   </ItemGroup>
   <ItemGroup>
